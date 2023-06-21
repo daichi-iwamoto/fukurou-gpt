@@ -1,0 +1,98 @@
+.page {
+  width: calc(100% - 15dvw);
+  height: calc(100dvh - 70px);
+  overflow: scroll;
+
+  .translateSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    margin: 0 20px;
+
+    input,
+    .japanese {
+      font-size: 0.8rem;
+      width: calc(30% - 15px);
+      border: none;
+      padding: 15px 10px;
+    }
+
+    button,
+    .arrow {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      transition: 0.3s;
+      cursor: pointer;
+      &.loading {
+        opacity: 0;
+      }
+    }
+
+    .output {
+      width: calc(70% - 15px);
+      font-size: 0.8rem;
+      padding-left: 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .branch,
+      .commit {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+
+        .label {
+          font-size: 0.5rem;
+          width: 130px;
+          padding: 5px 10px;
+          text-align: center;
+          color: #fff;
+          background-color: #dfe6e9;
+        }
+
+        .value {
+          padding-left: 10px;
+          padding-bottom: 0.1rem;
+          font-size: 0.8rem;
+          width: calc(100% - 130px);
+        }
+      }
+
+      .branch {
+        .label {
+          background: #00b894;
+        }
+      }
+
+      .commit {
+        .label {
+          background: #00cec9;
+        }
+      }
+
+      &.onlyLable {
+        .branch,
+        .commit {
+          width: 100%;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #dfe6e9;
+    }
+  }
+}

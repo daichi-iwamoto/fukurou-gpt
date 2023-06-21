@@ -1,7 +1,8 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import './globals.scss'
+import { Roboto_Mono } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const robotoMono = Roboto_Mono({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,8 +15,31 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja">
+      <body className={robotoMono.className}>
+        <header>
+          <h1>Fukurou GPT</h1>
+        </header>
+        <nav>
+          <ul>
+            <li>
+              <Link href="translator-for-dev3">
+                <p>Translator</p>
+                <span>for dev3</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="translator-for-dev3">
+                <p>Dummy</p>
+                <span>dummy page</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="contents">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
